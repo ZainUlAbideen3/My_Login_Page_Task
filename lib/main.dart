@@ -1,8 +1,12 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:login_page/logIn_page.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(DevicePreview(enabled: !kReleaseMode,
+      builder: (context) => const MyApp(),));
 }
 
 class MyApp extends StatelessWidget {
@@ -11,13 +15,19 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const LogInPage(),
+    return ResponsiveSizer(
+      builder: (context , orientation , screenType) {
+      return MaterialApp(
+       locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+            useMaterial3: true,
+          ),
+          home: const LogInPage(),
+        );
+      },
     );
   }
 }

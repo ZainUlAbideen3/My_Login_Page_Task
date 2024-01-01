@@ -1,6 +1,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:responsive_sizer/responsive_sizer.dart';
+
 
 class LogInPage extends StatefulWidget {
   const LogInPage({super.key});
@@ -18,55 +20,59 @@ class _LogInPageState extends State<LogInPage> {
   Widget build(BuildContext context) {
     return  Scaffold(
       body: Padding(
-        padding: const EdgeInsets.only(left: 20, right: 20, top: 70, bottom: 30),
+        padding:  EdgeInsets.only(left: 5.w, right: 5.w, top: 9.h,),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
-            child: Column(
+            child: SizedBox(
+              height: Device.height -14.h,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                   Text("Login", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26.sp),) ,
+                   SizedBox(height: 2.5.h,) ,
+                   Align(alignment: Alignment.centerLeft,
+                      child: Text("Username", style: TextStyle( fontSize: 17.sp),)) ,
+                  // const SizedBox(height: 5,),
+                  MyTextField(controller: userNameController , hintText: "Type your username",prefixIcon: Icons.person,keyboardType: TextInputType.name,validator: (value) {
+                    return value?.isRequired (errorText: 'This field is required') ;
+                  },) ,
+                   SizedBox(height: 1.8.h,) ,
+                   Align(alignment: Alignment.centerLeft,
+                      child: Text("Password", style: TextStyle( fontSize: 17.sp),)) ,
+                  // const SizedBox(height: 5,),
+                  MyTextField(controller: passwordController , hintText: "Type your password",prefixIcon: Icons.lock,keyboardType: TextInputType.name,obscureText: true, validator: (value) {
+                    return value?.isRequired(errorText: "This field is required") ;
+                  },) ,
+                   SizedBox(height: 1.h,) ,
+                  Align(alignment: Alignment.centerRight,
+                      child: Text("Forget password?", style: TextStyle( fontSize: 17.sp),)) ,
+                   SizedBox(height: 2.h,) ,
+                  MyButton(onTap: () {
+               if (_formKey.currentState!.validate()) {
 
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const Text("Login", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),) ,
-                const SizedBox(height: 20,) ,
-                const Align(alignment: Alignment.centerLeft,
-                    child: Text("Username", style: TextStyle( fontSize: 14),)) ,
-                // const SizedBox(height: 5,),
-                MyTextField(controller: userNameController , hintText: "Type your username",prefixIcon: Icons.person,keyboardType: TextInputType.name,validator: (value) {
-                  return value?.isRequired (errorText: 'This field is required') ;
-                },) ,
-                const SizedBox(height: 15,) ,
-                const Align(alignment: Alignment.centerLeft,
-                    child: Text("password", style: TextStyle( fontSize: 14),)) ,
-                // const SizedBox(height: 5,),
-                MyTextField(controller: passwordController , hintText: "Type your password",prefixIcon: Icons.lock,keyboardType: TextInputType.name,obscureText: true, validator: (value) {
-                  return value?.isRequired(errorText: "This field is required") ;
-                },) ,
-                const SizedBox(height: 5,) ,
-                const Align(alignment: Alignment.centerRight,
-                    child: Text("Forget password?", style: TextStyle( fontSize: 14),)) ,
-                const SizedBox(height: 20,) ,
-                MyButton(onTap: () {
-             if (_formKey.currentState!.validate()) {
-
-             }
-                },) ,
-                const SizedBox(height: 30,) ,
-              const Text("Or Sign Up Using", style: TextStyle( fontSize: 14),) ,
-                const SizedBox(height: 20,) ,
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset("assets/svg_images/icons8-facebook.svg"),const SizedBox(width: 5,),
-                SvgPicture.asset("assets/svg_images/icons8-twitter-circled.svg"),const SizedBox(width: 5,),
-                SvgPicture.asset("assets/svg_images/icons8-google.svg"),
-              ],
-            ),
-              //  const Spacer() ,
-                SizedBox(height: 200,) ,
-                const Text("Or Sign Up Using", style: TextStyle( fontSize: 14),) ,
-                const SizedBox(height: 15,) ,
-                const Text("Sign Up", style: TextStyle( fontSize: 14),) ,
-              ],
+               }
+                  },) ,
+                   SizedBox(height: 3.5.h,) ,
+                 Text("Or Sign Up Using", style: TextStyle( fontSize: 17.sp),) ,
+                  SizedBox(height: 2.5.h,) ,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset("assets/svg_images/icons8-facebook.svg"),const SizedBox(width: 5,),
+                  SvgPicture.asset("assets/svg_images/icons8-twitter-circled.svg"),const SizedBox(width: 5,),
+                  SvgPicture.asset("assets/svg_images/icons8-google.svg"),
+                ],
+              ),
+                 const Spacer() ,
+                // SizedBox(height: 22.h,) ,
+                   Text("Or Sign Up Using", style: TextStyle( fontSize: 17.sp),) ,
+                  SizedBox(height: 1.5.h,) ,
+                   Text("Sign Up", style: TextStyle( fontSize: 17.sp),) ,
+                 // SizedBox(height: 2.h,)
+                ],
+              ),
             ),
           ),
         ),
@@ -126,14 +132,18 @@ class MyButton extends StatelessWidget {
 
 extension Validation on String {
   isRequired({required String errorText}) {
-    if(this== "" ) {
+    if(this=="" ) {
       return errorText ;
     }
     return null ;
   }
 }
-extension ValidationExtension on String {
-  String toCapitalize () {
-    return  this.toUpperCase() ;
-  }
-}
+
+
+// Widget fittedBox () {
+//   return Scaffold(
+//     body: LayoutBuilder(builder: (context, constraints) {
+//
+//     },)
+//   ) ;
+// }
