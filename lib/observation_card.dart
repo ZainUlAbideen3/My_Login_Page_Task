@@ -18,7 +18,7 @@ class _ObservationCardState extends State<ObservationCard> {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
-    int crossAxisCount;
+ //   int crossAxisCount;
     // if (screenWidth <= 640) {
     //   crossAxisCount = 1;
     // } else if (screenWidth > 640 && screenWidth < 875) {
@@ -28,12 +28,11 @@ class _ObservationCardState extends State<ObservationCard> {
     // } else {
     //   crossAxisCount = 4;
     // }
-
-    final int crossAxixCount = screenWidth <= 680
+    final int crossAxixCount = screenWidth <= 690
         ? 1
-        : screenWidth > 680 && screenWidth < 900
+        : screenWidth > 690 && screenWidth < 920
             ? 2
-            : screenWidth >= 900 && screenWidth < 1125
+            : screenWidth >= 920 && screenWidth < 1125
                 ? 3
                 : 4;
 
@@ -122,7 +121,7 @@ class MyCardWidget extends StatelessWidget {
                   Text(
                     "THGD-I",
                     style:
-                        TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     width: 1.4.w,
@@ -135,7 +134,7 @@ class MyCardWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4)),
                     child: Text(
                       "In review",
-                      style: TextStyle(fontSize: 10.sp),
+                      style: TextStyle(fontSize: 10),
                     ),
                   )
                 ],
@@ -148,7 +147,7 @@ class MyCardWidget extends StatelessWidget {
           ),
           Text(
             "Name form",
-            style: TextStyle(fontSize: 10.sp, fontWeight: FontWeight.bold),
+            style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold),
           ),
           SizedBox(
             height: 0.5.h,
@@ -168,14 +167,14 @@ class MyCardWidget extends StatelessWidget {
                   Text(
                     "Community Name",
                     style: TextStyle(
-                      fontSize: 10.sp,
+                      fontSize: 10,
                     ),
                   ),
                 ],
               ),
               Text(
                 "Edited 01 Jan 2024",
-                style: TextStyle(fontSize: 10.sp),
+                style: TextStyle(fontSize: 10),
               ),
             ],
           )
@@ -184,3 +183,5 @@ class MyCardWidget extends StatelessWidget {
     );
   }
 }
+
+
