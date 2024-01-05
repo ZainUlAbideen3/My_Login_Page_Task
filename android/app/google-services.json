@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "735897242781",
+    "project_id": "tanbits-fiebase-project",
+    "storage_bucket": "tanbits-fiebase-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735897242781:android:16b30aa760d1fbc32b5874",
+        "android_client_info": {
+          "package_name": "com.example.login_page"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXQByG4POnmW1_tTMEw5QC0FpIvwFlx5E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

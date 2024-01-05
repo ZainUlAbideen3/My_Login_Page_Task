@@ -39,22 +39,20 @@ class _ObservationCardState extends State<ObservationCard> {
     return Scaffold(
       body: SafeArea(
         child: isMobile(context)
-            ? Expanded(
-                child: ListView.builder(
-                  itemCount: 20,
-                  padding: const EdgeInsets.all(20),
-                  itemBuilder: (context, index) {
-                    return const Column(
-                      children: [
-                        MyCardWidget(),
-                        SizedBox(
-                          height: 10,
-                        )
-                      ],
-                    );
-                  },
-                ),
-              )
+            ? ListView.builder(
+              itemCount: 20,
+              padding: const EdgeInsets.all(20),
+              itemBuilder: (context, index) {
+                return const Column(
+                  children: [
+                    MyCardWidget(),
+                    SizedBox(
+                      height: 10,
+                    )
+                  ],
+                );
+              },
+            )
             : Row(children: [
                 if (isDesktop(context))
                   Container(
@@ -74,7 +72,7 @@ class _ObservationCardState extends State<ObservationCard> {
                     padding: const EdgeInsets.all(20),
                     gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                         crossAxisCount: crossAxixCount,
-                        childAspectRatio: 1 / .34,
+                    //    childAspectRatio: 1 / .34,
                         crossAxisSpacing: 10,
                         mainAxisSpacing: 10,
                     mainAxisExtent: 75),
@@ -118,7 +116,7 @@ class MyCardWidget extends StatelessWidget {
             children: [
               Row(
                 children: [
-                  Text(
+                  const Text(
                     "THGD-I",
                     style:
                         TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
@@ -132,7 +130,7 @@ class MyCardWidget extends StatelessWidget {
                     decoration: BoxDecoration(
                         color: Colors.grey.shade300,
                         borderRadius: BorderRadius.circular(4)),
-                    child: Text(
+                    child: const Text(
                       "In review",
                       style: TextStyle(fontSize: 10),
                     ),

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>API_KEY</key>
+	<string>AIzaSyCeIEVDYqb5iaDuE1GMamcYDFgXGMoVjH8</string>
+	<key>GCM_SENDER_ID</key>
+	<string>735897242781</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.loginPage</string>
+	<key>PROJECT_ID</key>
+	<string>tanbits-fiebase-project</string>
+	<key>STORAGE_BUCKET</key>
+	<string>tanbits-fiebase-project.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:735897242781:ios:b42c5bbe15cf65df2b5874</string>
+</dict>
+</plist>
