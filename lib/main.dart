@@ -7,12 +7,14 @@ import 'package:login_page/logIn_page.dart';
 import 'package:login_page/observation_card.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_app_check/firebase_app_check.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized() ;
   await  Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform
   ) ;
+ // await FirebaseAppCheck.instance.activate();
   runApp(const MyApp());
 }
 
